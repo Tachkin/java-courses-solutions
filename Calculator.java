@@ -18,7 +18,7 @@ public class Calculator {
 	*/
 	public void add (int ... params){
 		for (int param : params){
-			result += param;
+			this.result += param;
 		}
 	}
 	
@@ -28,7 +28,7 @@ public class Calculator {
 	*/
 	public void sub (int ... params){
 		for (int param : params){
-			result -= param;
+			this.result -= param;
 		}
 	}
 	
@@ -41,7 +41,7 @@ public class Calculator {
 			params = firstIteration(params);
 		}
 		for (int param : params){
-			result *= param;
+			this.result *= param;
 		}
 	}
 	
@@ -54,7 +54,7 @@ public class Calculator {
 			params = firstIteration(params);
 		}
 		for (int param : params){
-			result /= param;
+			this.result /= param;
 		}
 	}
 	
@@ -67,7 +67,7 @@ public class Calculator {
 			params = firstIteration(params);
 		}
 		for (int param : params){
-			result = (int)Math.pow(result, param);
+			this.result = (int)Math.pow(result, param);
 		}
 	}
 	
@@ -75,14 +75,14 @@ public class Calculator {
 	Возвращает результат
 	*/
 	public int getResult(){
-		return result;
+		return this.result;
 	}
 	
 	/**
 	Очистить результат вычислений
 	*/
 	public void cleanResult(){
-		result = 0;
+		this.result = 0;
 	}
 	
 	/**
@@ -93,7 +93,7 @@ public class Calculator {
 	@return result смещенные на 1 аргументы 
 	*/
 	private int[] firstIteration(int ... args){
-		result = args[0];
+		this.result = args[0];
 		return Arrays.copyOfRange(args,1,args.length);
 	}
 }
