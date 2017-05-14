@@ -1,3 +1,5 @@
+package ru.lesson.lessons;
+
 /**
 Простая реализация домашнего животного
 @author Tachkin

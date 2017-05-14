@@ -1,4 +1,6 @@
-import java.util.Arrays;
+package ru.lesson.lessons;
+
+import static java.util.Arrays.*;
 
 /**
 Простая реализация клиники домашних животных
@@ -22,7 +24,7 @@ public class SimpleClinicImpl implements Clinic{
 	@return добавлен/нет
 	*/
 	public boolean addClient(Client client){
-		clients = Arrays.copyOf(clients, clients.length+1);
+		clients = copyOf(clients, clients.length+1);
 		clients[clients.length-1] = client;
 		return true;
 	}
@@ -30,7 +32,7 @@ public class SimpleClinicImpl implements Clinic{
 	/**
 	Удаление клиента
 	@param client клиент клиники
-	@return id удаленного клиента
+	@return удален/не найден
 	*/
 	public boolean removeClient(Client client){
 		boolean find = false;
@@ -43,7 +45,7 @@ public class SimpleClinicImpl implements Clinic{
 		if (clients[clients.length-1].equals(client)){
 			find = true;
 		}
-		this.clients = Arrays.copyOf(clients, clients.length - 1);
+		this.clients = copyOf(clients, clients.length - 1);
 		return find;
 	}
 	
@@ -64,7 +66,7 @@ public class SimpleClinicImpl implements Clinic{
 				}
 			}
 		}
-		return Arrays.copyOf(findClients, counter);
+		return copyOf(findClients, counter);
 	}
 	
 	/**

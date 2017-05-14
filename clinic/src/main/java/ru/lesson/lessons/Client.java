@@ -1,3 +1,5 @@
+package ru.lesson.lessons;
+
 /**
 Интерфейс клиента клиники для животных
 @author Tachkin

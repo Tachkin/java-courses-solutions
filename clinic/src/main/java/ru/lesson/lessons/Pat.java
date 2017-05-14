@@ -1,3 +1,5 @@
+package ru.lesson.lessons;
+
 /**
 Интерфейс домашних животных
 @author Tachkin

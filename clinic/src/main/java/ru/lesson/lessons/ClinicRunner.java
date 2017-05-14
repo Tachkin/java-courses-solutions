@@ -1,3 +1,5 @@
+package ru.lesson.lessons;
+
 /**
 Запуск клиники домашних животных
 @author Tachkin
