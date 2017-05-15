@@ -1,5 +1,7 @@
 package ru.lesson.lessons;
 
+import ru.lesson.lessons.exception.CalcArgException;
+
 import java.util.Scanner;
 
 /**
@@ -33,12 +35,22 @@ public class InteractivRunner{
 					break;
 				}
 				case "/": {
-					calc.div(first, second);
-					break;
+                    try {
+                        calc.div(first, second);
+                    } catch (CalcArgException e) {
+                        System.out.println("Sorry,");
+                        System.out.println(e.getMessage());
+                    }
+                    break;
 				}
 				case "^": {
-					calc.pow(first, second);
-					break;
+                    try {
+                        calc.pow(first, second);
+                    } catch (CalcArgException e) {
+                        System.out.println("Sorry,");
+                        System.out.println(e.getMessage());
+                    }
+                    break;
 				}
 			}
 			

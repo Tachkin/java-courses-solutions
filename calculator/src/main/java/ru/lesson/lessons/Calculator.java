@@ -1,5 +1,7 @@
 package ru.lesson.lessons;
 
+import ru.lesson.lessons.exception.CalcArgException;
+
 import java.util.Arrays;
 import java.lang.Math;
 
@@ -35,7 +37,7 @@ public class Calculator {
 	}
 	
 	/**
-	Умножаем аргументы
+	Умножаем на аргументы
 	@param params аргументы умножения
 	*/
 	public void mult (int ... params){
@@ -51,11 +53,12 @@ public class Calculator {
 	Делим аргументы
 	@param params делители
 	*/
-	public void div (int ... params){
+	public void div (int ... params) throws CalcArgException {
 		if (result == 0){
 			params = firstIteration(params);
 		}
 		for (int param : params){
+		    if (param == 0) throw new CalcArgException("You can`t divid by 0");
 			this.result /= param;
 		}
 	}
@@ -64,11 +67,12 @@ public class Calculator {
 	Возводим в степень
 	@param params степени
 	*/
-	public void pow (int ... params){
+	public void pow (int ... params) throws CalcArgException {
 		if (result == 0){
 			params = firstIteration(params);
 		}
 		for (int param : params){
+		    if (param < 0) throw new CalcArgException("You can`t pow below 0");
 			this.result = (int)Math.pow(result, param);
 		}
 	}

@@ -1,5 +1,7 @@
 package ru.lesson.lessons;
 
+import ru.lesson.lessons.exception.CalcArgException;
+
 /**
 Класс для запуска калькулятора с данными из параметров запуска класса
 параметры вводятся в следующем порядке: 
@@ -29,13 +31,23 @@ public class ArgsRunner{
 				break;
 			}
 			case "div": {
-				calc.div(first, second);
-				arifmetic = " / ";
+                try {
+                    calc.div(first, second);
+                } catch (CalcArgException e) {
+                    System.out.println("Sorry,");
+                    System.out.println(e.getMessage());
+                }
+                arifmetic = " / ";
 				break;
 			}
 			case "pow": {
-				calc.pow(first, second);
-				arifmetic = " ^ ";
+                try {
+                    calc.pow(first, second);
+                } catch (CalcArgException e) {
+                    System.out.println("Sorry,");
+                    System.out.println(e.getMessage());
+                }
+                arifmetic = " ^ ";
 				break;
 			}
 		}
