@@ -1,4 +1,6 @@
-package ru.lesson.lessons;
+package ru.lesson.lessons.impl.clinicImpl;
+
+import ru.lesson.lessons.interf.*;
 
 import static java.util.Arrays.*;
 

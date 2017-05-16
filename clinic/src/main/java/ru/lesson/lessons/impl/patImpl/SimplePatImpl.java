@@ -1,4 +1,7 @@
-package ru.lesson.lessons;
+package ru.lesson.lessons.impl.patImpl;
+
+import ru.lesson.lessons.interf.*;
+
 
 /**
 Простая реализация домашнего животного

@@ -1,4 +1,6 @@
-package ru.lesson.lessons;
+package ru.lesson.lessons.impl.clientImpl;
+
+import ru.lesson.lessons.interf.*;
 
 import java.util.Arrays;
 
@@ -8,7 +10,7 @@ import java.util.Arrays;
 @since 14.05.2017
 */
 
-public class SimpleClientImpl implements Client{
+public class SimpleClientImpl implements Client {
 	/**
 	Имя клиента, выступает идентификатором
 	*/

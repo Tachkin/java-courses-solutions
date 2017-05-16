@@ -1,4 +1,4 @@
-package ru.lesson.lessons;
+package ru.lesson.lessons.interf;
 
 /**
 Интерфейс клиники для животных
