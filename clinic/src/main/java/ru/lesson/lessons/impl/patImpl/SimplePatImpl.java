@@ -1,6 +1,8 @@
 package ru.lesson.lessons.impl.patImpl;
 
 import ru.lesson.lessons.interf.*;
+import ru.lesson.lessons.utils.exception.ValidationException;
+import ru.lesson.lessons.utils.validator.NameValidator;
 
 
 /**
@@ -13,8 +15,12 @@ public class SimplePatImpl implements Pat{
 	private final  String name;
 	private final String breed;
 	
-	public SimplePatImpl(String name, String breed){
-		this.name = name;
+	public SimplePatImpl(String name, String breed) throws ValidationException {
+        if (NameValidator.patNameValidate(name)) {
+            this.name = name;
+        }else {
+            throw new ValidationException("Error in client name");
+        }
 		this.breed = breed;
 	}
 	

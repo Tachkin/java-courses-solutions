@@ -5,6 +5,7 @@ import ru.lesson.lessons.impl.clientImpl.SimpleClientImpl;
 import ru.lesson.lessons.impl.clinicImpl.SimpleClinicImpl;
 import ru.lesson.lessons.impl.patImpl.SimplePatImpl;
 import ru.lesson.lessons.interf.*;
+import ru.lesson.lessons.utils.exception.ValidationException;
 
 /**
 Запуск клиники домашних животных
@@ -13,7 +14,7 @@ import ru.lesson.lessons.interf.*;
 */
 
 public class ClinicRunner{
-	public static void main (String[] args){
+	public static void main (String[] args) throws ValidationException {
 		Pat[] pats1 = new Pat[]{
 			new SimplePatImpl("Murc","Cat"),
 			new SimplePatImpl("Shar","Dog"),

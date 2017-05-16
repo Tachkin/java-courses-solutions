@@ -2,6 +2,9 @@ package ru.lesson.lessons;
 
 import org.junit.Before;
 import org.junit.Test;
+import ru.lesson.lessons.impl.clientImpl.SimpleClientImpl;
+import ru.lesson.lessons.interf.Pat;
+import ru.lesson.lessons.utils.exception.ValidationException;
 
 import static org.junit.Assert.*;
 
@@ -19,6 +22,16 @@ public class SimpleClientImplTest {
     @Test
     public void getName() throws Exception {
         assertEquals(client.getName(), "ABC");
+    }
+
+    @Test(expected = ValidationException.class)
+    public void nameFromLowCaseException() throws ValidationException {
+        client = new SimpleClientImpl("f", new Pat[]{});
+    }
+
+    @Test(expected = ValidationException.class)
+    public void nameLangthLZ2() throws ValidationException {
+        client = new SimpleClientImpl("A", new Pat[]{});
     }
 
 }

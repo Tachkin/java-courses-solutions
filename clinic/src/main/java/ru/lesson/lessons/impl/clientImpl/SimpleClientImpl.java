@@ -1,6 +1,8 @@
 package ru.lesson.lessons.impl.clientImpl;
 
 import ru.lesson.lessons.interf.*;
+import ru.lesson.lessons.utils.exception.ValidationException;
+import ru.lesson.lessons.utils.validator.NameValidator;
 
 import java.util.Arrays;
 
@@ -21,8 +23,12 @@ public class SimpleClientImpl implements Client {
 	*/
 	private Pat[] pats;
 	
-	public SimpleClientImpl(String name, Pat[] pats){
-		this.name = name;
+	public SimpleClientImpl(String name, Pat[] pats) throws ValidationException {
+		if (NameValidator.clientNameValidate(name)) {
+			this.name = name;
+		}else {
+			throw new ValidationException("Error in client name");
+		}
 		this.pats = pats;
 	}
 	
