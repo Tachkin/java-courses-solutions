@@ -2,6 +2,7 @@ package ru.lesson.lessons;
 
 import org.junit.Before;
 import org.junit.Test;
+import ru.lesson.lessons.exception.CalcArgException;
 
 import static org.junit.Assert.*;
 
@@ -41,10 +42,20 @@ public class CalculatorTest {
         assertEquals(1, calc.getResult());
     }
 
+    @Test(expected = CalcArgException.class)
+    public void divByZeroException() throws Exception {
+        calc.div(9,0,3);
+    }
+
     @Test
     public void pow() throws Exception {
         calc.pow(3,2);
         assertEquals(9, calc.getResult());
+    }
+
+    @Test(expected = CalcArgException.class)
+    public void powBelowZero() throws Exception {
+        calc.pow(9,0,-1);
     }
 
     @Test
