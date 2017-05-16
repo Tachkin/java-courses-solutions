@@ -1,4 +1,10 @@
-package ru.lesson.lessons;
+package ru.lesson.lessons.impl.runnerImpl;
+
+
+import ru.lesson.lessons.impl.clientImpl.SimpleClientImpl;
+import ru.lesson.lessons.impl.clinicImpl.SimpleClinicImpl;
+import ru.lesson.lessons.impl.patImpl.SimplePatImpl;
+import ru.lesson.lessons.interf.*;
 
 /**
 Запуск клиники домашних животных
